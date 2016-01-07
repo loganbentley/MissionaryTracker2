@@ -9,4 +9,13 @@
     <string name="no_missionaries">You haven\'t added any missionaries yet!</string>
     <string name="click_to_add">Click here to add a missionary</string>
     <string name="title_activity_maps">Missionary Map</string>
+    <string name="title_activity_login">Login</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="register">Register</string>
+    <string name="parse_application_id">vJQK4ihBIZn4x1ss5IZlSaPovUpGy5wR8ybPOrIo</string>
+    <string name="parse_client_key">unz3EHi67tGln7CvjqXHzBsnYySOnYzkaisGZrR3</string>
+    <string name="facebook_app_id">733918216738884</string>
+    <string name="facebook_sign_in">Login via Facebook</string>
 </resources>
