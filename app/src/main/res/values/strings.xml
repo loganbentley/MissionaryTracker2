@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Missionary Tracker</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="my_missionaries">My Missionaries</string>
+    <string name="my_missionary_map">My Missionary Map</string>
+    <string name="title_activity_my_missionaries">My Missionaries</string>
+    <string name="no_missionaries">You haven\'t added any missionaries yet!</string>
+    <string name="click_to_add">Click here to add a missionary</string>
+    <string name="title_activity_maps">Missionary Map</string>
+</resources>
