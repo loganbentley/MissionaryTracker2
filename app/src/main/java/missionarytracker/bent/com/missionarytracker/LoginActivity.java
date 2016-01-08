@@ -54,6 +54,11 @@ public class LoginActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getString(R.string.title_activity_login));
 
+        if (ParseUser.getCurrentUser() != null) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+        }
+
 
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -146,7 +151,9 @@ public class LoginActivity extends AppCompatActivity {
         parseUser.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
-                Toast.makeText(LoginActivity.this, "New user:" + name + " Signed up", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -154,7 +161,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void getUserDetailsFromParse() {
         final ParseUser parseUser = ParseUser.getCurrentUser();
-        Toast.makeText(LoginActivity.this, "Welcome back " + parseUser.getUsername(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 
