@@ -29,6 +29,7 @@
             android:textSize="16sp"/>
 
         <Button
+            android:id="@+id/add_missionary_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"

@@ -12,31 +12,29 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".MyApp"
+        android:name=".utils.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.parse.APPLICATION_ID"
             android:value="@string/parse_application_id" />
         <meta-data
             android:name="com.parse.CLIENT_KEY"
             android:value="@string/parse_client_key" />
-
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,8 +44,7 @@
         </activity>
         <activity
             android:name=".HomeActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".MyMissionariesActivity"
             android:label="@string/title_activity_my_missionaries"
@@ -76,6 +73,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="missionarytracker.bent.com.missionarytracker.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".AddMissionaryActivity"
+            android:label="@string/title_activity_add_missionary"
+            android:parentActivityName=".MyMissionariesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="missionarytracker.bent.com.missionarytracker.MyMissionariesActivity" />
         </activity>
     </application>
 

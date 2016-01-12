@@ -1,13 +1,17 @@
 package missionarytracker.bent.com.missionarytracker;
 
+import android.content.Intent;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
-public class MyMissionariesActivity extends ActionBarActivity {
+public class MyMissionariesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +19,15 @@ public class MyMissionariesActivity extends ActionBarActivity {
         setContentView(R.layout.activity_my_missionaries);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Button addMissionaryButton = (Button) findViewById(R.id.add_missionary_btn);
+        addMissionaryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MyMissionariesActivity.this, AddMissionaryActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
