@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="missions">
+        <item>Adriatic North Mission</item>
+        <item>Adriatic South Mission</item>
+        <item>Alabama Birmingham Mission</item>
+        <item>Alaska Anchorage Mission</item>
+        <item>Alpine German-Speaking Mission</item>
+        <item>Angola Luanda Mission</item>
+        <item>Argentina Bahía Blanca Mission</item>
+        <item>Argentina Buenos Aires East Mission</item>
+        <item>Argentina Buenos Aires North Mission</item>
+        <item>Argentina Buenos Aires South Mission</item>
+        <item>Argentina Buenos Aires West Mission</item>
+        <item>Argentina Comodoro Rivadavia Mission</item>
+        <item>Argentina Córdoba Mission</item>
+        <item>Argentina Mendoza Mission</item>
+        <item>Argentina Neuquén Mission</item>
+        <item>Argentina Posadas Mission</item>
+        <item>Argentina Resistencia Mission</item>
+        <item>Argentina Rosario Mission</item>
+        <item>Argentina Salta Mission</item>
+        <item>Argentina Santa Fe Mission</item>
+        <item>Arizona Gilbert Mission</item>
+        <item>Arizona Mesa Mission</item>
+        <item>Arizona Phoenix Mission</item>
+        <item>Arizona Scottsdale Mission</item>
+        <item>Arizona Tempe Mission</item>
+        <item>Arizona Tucson Mission</item>
+        <item>Arkansas Bentonville Mission</item>
+        <item>Arkansas Little Rock Mission</item>
+        <item>Armenia Yerevan Mission</item>
+        <item>Australia Adelaide Mission</item>
+        <item>Australia Brisbane Mission</item>
+        <item>Australia Melbourne Mission</item>
+        <item>Australia Perth Mission</item>
+        <item>Australia Sydney North Mission</item>
+        <item>Australia Sydney South Mission</item>
+        <item>Baltic Mission</item>
+        <item>Barbados Bridgetown Mission</item>
+        <item>Belgium/Netherlands Mission</item>
+        <item>Benin Cotonou Mission</item>
+        <item>Bolivia Cochabamba Mission</item>
+        <item>Bolivia La Paz Mission</item>
+        <item>Bolivia La Paz El Alto Mission</item>
+        <item>Bolivia Santa Cruz Mission</item>
+        <item>Bolivia Santa Cruz North Mission</item>
+        <item>Botswana/Namibia Mission</item>
+        <item>Brazil Belém Mission</item>
+        <item>Brazil Belo Horizonte Mission</item>
+        <item>Brazil Brasília Mission</item>
+        <item>Brazil Campinas Mission</item>
+        <item>Brazil Cuiabá Mission</item>
+        <item>Brazil Curitiba Mission</item>
+        <item>Brazil Curitiba South Mission</item>
+        <item>Brazil Florianópolis Mission</item>
+        <item>Brazil Fortaleza East Mission</item>
+        <item>Brazil Fortaleza Mission</item>
+        <item>Brazil Goiânia Mission</item>
+        <item>Brazil João Pessoa Mission</item>
+        <item>Brazil Juiz de Fora Mission</item>
+        <item>Brazil Londrina Mission</item>
+        <item>Brazil Maceió Mission</item>
+        <item>Brazil Manaus Mission</item>
+        <item>Brazil Natal Mission</item>
+        <item>Brazil Piracicaba Mission</item>
+        <item>Brazil Porto Alegre North Mission</item>
+        <item>Brazil Porto Alegre South Mission</item>
+        <item>Brazil Recife Mission</item>
+        <item>Brazil Ribeirão Preto Mission</item>
+        <item>Brazil Rio de Janeiro Mission</item>
+        <item>Brazil Salvador Mission</item>
+        <item>Brazil Salvador South Mission</item>
+        <item>Brazil Santa Maria Mission</item>
+        <item>Brazil Santos Mission</item>
+        <item>Brazil São Paulo East Mission</item>
+        <item>Brazil São Paulo Interlagos Mission</item>
+        <item>Brazil São Paulo North Mission</item>
+        <item>Brazil São Paulo South Mission</item>
+        <item>Brazil São Paulo West Mission</item>
+        <item>Brazil Teresina Mission</item>
+        <item>Brazil Vitória Mission</item>
+        <item>Bulgaria Sofia Mission</item>
+        <item>California Anaheim Mission</item>
+        <item>California Arcadia Mission</item>
+        <item>California Bakersfield Mission</item>
+        <item>California Carlsbad Mission</item>
+        <item>California Fresno Mission</item>
+        <item>California Irvine Mission</item>
+        <item>California Long Beach Mission</item>
+        <item>California Los Angeles Mission</item>
+        <item>California Modesto Mission</item>
+        <item>California Oakland/San Francisco Mission</item>
+        <item>California Rancho Cucamonga Mission</item>
+        <item>California Redlands Mission</item>
+        <item>California Riverside Mission</item>
+        <item>California Roseville Mission</item>
+        <item>California Sacramento Mission</item>
+        <item>California San Diego Mission</item>
+        <item>California San Fernando Mission</item>
+        <item>California San Jose Mission</item>
+        <item>California Santa Rosa Mission</item>
+        <item>California Ventura Mission</item>
+        <item>Cambodia Phnom Penh Mission</item>
+        <item>Canada Calgary Mission</item>
+        <item>Canada Edmonton Mission</item>
+        <item>Canada Halifax Mission</item>
+        <item>Canada Montréal Mission</item>
+        <item>Canada Toronto Mission</item>
+        <item>Canada Vancouver Mission</item>
+        <item>Canada Winnipeg Mission</item>
+        <item>Cape Verde Praia Mission</item>
+        <item>Chile Antofagasta Mission</item>
+        <item>Chile Concepción Mission</item>
+        <item>Chile Concepción South Mission</item>
+        <item>Chile Osorno Mission</item>
+        <item>Chile Rancagua Mission</item>
+        <item>Chile Santiago East Mission</item>
+        <item>Chile Santiago North Mission</item>
+        <item>Chile Santiago South Mission</item>
+        <item>Chile Santiago West Mission</item>
+        <item>Chile Viña del Mar Mission</item>
+        <item>China Hong Kong Mission</item>
+        <item>Colombia Barranquilla Mission</item>
+        <item>Colombia Bogota North Mission</item>
+        <item>Colombia Bogota South Mission</item>
+        <item>Colombia Cali Mission</item>
+        <item>Colombia Medellin Mission</item>
+        <item>Colorado Colorado Springs Mission</item>
+        <item>Colorado Denver North Mission</item>
+        <item>Colorado Denver South Mission</item>
+        <item>Colorado Fort Collins Mission</item>
+        <item>Costa Rica San José East Mission</item>
+        <item>Costa Rica San José West Mission</item>
+        <item>Cote d\'Ivoire Abidjan Mission</item>
+        <item>Cote d\'Ivoire Abidjan West Mission</item>
+        <item>Czech/Slovak Mission</item>
+        <item>Democratic Republic of the Congo Kinshasa Mission</item>
+        <item>Democratic Republic of the Congo Lubumbashi Mission</item>
+        <item>Denmark Copenhagen Mission</item>
+        <item>Dominican Republic Santiago Mission</item>
+        <item>Dominican Republic Santo Domingo East Mission</item>
+        <item>Dominican Republic Santo Domingo West Mission</item>
+        <item>Ecuador Guayaquil North Mission</item>
+        <item>Ecuador Guayaquil South Mission</item>
+        <item>Ecuador Guayaquil West Mission</item>
+        <item>Ecuador Quito Mission</item>
+        <item>Ecuador Quito North Mission</item>
+        <item>El Salvador San Salvador East Mission</item>
+        <item>El Salvador San Salvador West/Belize Mission</item>
+        <item>El Salvador Santa Ana Mission</item>
+        <item>England Birmingham Mission</item>
+        <item>England Leeds Mission</item>
+        <item>England London Mission</item>
+        <item>England London South Mission</item>
+        <item>England Manchester Mission</item>
+        <item>Fiji Suva Mission</item>
+        <item>Finland Helsinki Mission</item>
+        <item>Florida Fort Lauderdale Mission</item>
+        <item>Florida Jacksonville Mission</item>
+        <item>Florida Orlando Mission</item>
+        <item>Florida Tallahassee Mission</item>
+        <item>Florida Tampa Mission</item>
+        <item>France Lyon Mission</item>
+        <item>France Paris Mission</item>
+        <item>Georgia Atlanta Mission</item>
+        <item>Georgia Atlanta North Mission</item>
+        <item>Georgia Macon Mission</item>
+        <item>Germany Berlin Mission</item>
+        <item>Germany Frankfurt Mission</item>
+        <item>Ghana Accra Mission</item>
+        <item>Ghana Accra West Mission</item>
+        <item>Ghana Cape Coast Mission</item>
+        <item>Ghana Kumasi Mission</item>
+        <item>Greece Athens Mission</item>
+        <item>Guatemala Cobán Mission</item>
+        <item>Guatemala Guatemala City Central Mission</item>
+        <item>Guatemala Guatemala City East Mission</item>
+        <item>Guatemala Guatemala City South Mission</item>
+        <item>Guatemala Quetzaltenango Mission</item>
+        <item>Guatemala Retalhuleu Mission</item>
+        <item>Haiti Port-au-Prince Mission</item>
+        <item>Hawaii Honolulu Mission</item>
+        <item>Honduras Comayagüela Mission</item>
+        <item>Honduras San Pedro Sula East Mission</item>
+        <item>Honduras San Pedro Sula West Mission</item>
+        <item>Honduras Tegucigalpa Mission</item>
+        <item>Hungary Budapest Mission</item>
+        <item>Idaho Boise Mission</item>
+        <item>Idaho Nampa Mission</item>
+        <item>Idaho Pocatello Mission</item>
+        <item>Idaho Twin Falls Mission</item>
+        <item>Illinois Chicago Mission</item>
+        <item>Illinois Chicago West Mission</item>
+        <item>Illinois Nauvoo Mission</item>
+        <item>India Bangalore Mission</item>
+        <item>India New Delhi Mission</item>
+        <item>Indiana Indianapolis Mission</item>
+        <item>Indonesia Jakarta Mission</item>
+        <item>Iowa Des Moines Mission</item>
+        <item>Italy Milan Mission</item>
+        <item>Italy Rome Mission</item>
+        <item>Japan Fukuoka Mission</item>
+        <item>Japan Kobe Mission</item>
+        <item>Japan Nagoya Mission</item>
+        <item>Japan Sapporo Mission</item>
+        <item>Japan Sendai Mission</item>
+        <item>Japan Tokyo Mission</item>
+        <item>Japan Tokyo South Mission</item>
+        <item>Kansas Wichita Mission</item>
+        <item>Kentucky Louisville Mission</item>
+        <item>Kenya Nairobi Mission</item>
+        <item>Korea Busan Mission</item>
+        <item>Korea Daejeon Mission</item>
+        <item>Korea Seoul Mission</item>
+        <item>Korea Seoul South Mission</item>
+        <item>Liberia Monrovia Mission</item>
+        <item>Louisiana Baton Rouge Mission</item>
+        <item>Madagascar Antananarivo Mission</item>
+        <item>Marshall Islands Majuro Mission</item>
+        <item>Maryland Baltimore Mission</item>
+        <item>Massachusetts Boston Mission</item>
+        <item>México Aguascalientes Mission</item>
+        <item>México Cancún Mission</item>
+        <item>México Chihuahua Mission</item>
+        <item>México Ciudad Juárez Mission</item>
+        <item>México Ciudad Obregón Mission</item>
+        <item>México Cuernavaca Mission</item>
+        <item>México Culiacán Mission</item>
+        <item>México Guadalajara East Mission</item>
+        <item>México Guadalajara East Mission</item>
+        <item>México Guadalajara Mission</item>
+        <item>México Hermosillo Mission</item>
+        <item>México Mérida Mission</item>
+        <item>México México City Chalco Mission</item>
+        <item>México México City East Mission</item>
+        <item>México México City North Mission</item>
+        <item>México México City Northwest Mission</item>
+        <item>México México City South Mission</item>
+        <item>México México City Southeast Mission</item>
+        <item>México México City West Mission</item>
+        <item>México Monterrey East Mission</item>
+        <item>México Monterrey West Mission</item>
+        <item>México Oaxaca Mission</item>
+        <item>México Pachuca Mission</item>
+        <item>México Puebla North Mission</item>
+        <item>México Puebla South Mission</item>
+        <item>México Querétaro Mission</item>
+        <item>México Reynosa Mission</item>
+        <item>México Saltillo Mission</item>
+        <item>México Tampico Mission</item>
+        <item>México Tijuana Mission</item>
+        <item>México Torreón Mission</item>
+        <item>México Tuxtla Gutiérrez Mission</item>
+        <item>México Veracruz Mission</item>
+        <item>México Villahermosa Mission</item>
+        <item>México Xalapa Mission</item>
+        <item>Michigan Detroit Mission</item>
+        <item>Michigan Lansing Mission</item>
+        <item>Micronesia Guam Mission</item>
+        <item>Minnesota Minneapolis Mission</item>
+        <item>Mississippi Jackson Mission</item>
+        <item>Missouri Independence Mission</item>
+        <item>Missouri St Louis Mission</item>
+        <item>Mongolia Ulaanbaatar Mission</item>
+        <item>Montana Billings Mission</item>
+        <item>Mozambique Maputo Mission</item>
+        <item>Nebraska Omaha Mission</item>
+        <item>Nevada Las Vegas Mission</item>
+        <item>Nevada Las Vegas West Mission</item>
+        <item>Nevada Reno Mission</item>
+        <item>New Hampshire Manchester Mission</item>
+        <item>New Jersey Morristown Mission</item>
+        <item>New Mexico Albuquerque Mission</item>
+        <item>New Mexico Farmington Mission</item>
+        <item>New York New York North Mission</item>
+        <item>New York New York South Mission</item>
+        <item>New York Rochester Mission</item>
+        <item>New York Utica Mission</item>
+        <item>New Zealand Auckland Mission</item>
+        <item>New Zealand Hamilton Mission</item>
+        <item>New Zealand Wellington Mission</item>
+        <item>Nicaragua Managua North Mission</item>
+        <item>Nicaragua Managua South Mission</item>
+        <item>Nigeria Benin City Mission</item>
+        <item>Nigeria Calabar Mission</item>
+        <item>Nigeria Enugu Mission</item>
+        <item>Nigeria Lagos Mission</item>
+        <item>Nigeria Port Harcourt Mission</item>
+        <item>North Carolina Charlotte Mission</item>
+        <item>North Carolina Raleigh Mission</item>
+        <item>North Dakota Bismarck Mission</item>
+        <item>Norway Oslo Mission</item>
+        <item>Ohio Cincinnati Mission</item>
+        <item>Ohio Cleveland Mission</item>
+        <item>Ohio Columbus Mission</item>
+        <item>Oklahoma Oklahoma City Mission</item>
+        <item>Oregon Eugene Mission</item>
+        <item>Oregon Portland Mission</item>
+        <item>Oregon Salem Mission</item>
+        <item>Panamá Panamá City Mission</item>
+        <item>Papua New Guinea Lae Mission</item>
+        <item>Papua New Guinea Port Moresby Mission</item>
+        <item>Paraguay Asunción Mission</item>
+        <item>Paraguay Asunción North Mission</item>
+        <item>Pennsylvania Philadelphia Mission</item>
+        <item>Pennsylvania Pittsburgh Mission</item>
+        <item>Perú Arequipa Mission</item>
+        <item>Perú Chiclayo Mission</item>
+        <item>Perú Cusco Mission</item>
+        <item>Perú Huancayo Mission</item>
+        <item>Perú Iquitos Mission</item>
+        <item>Perú Lima Central Mission</item>
+        <item>Perú Lima East Mission</item>
+        <item>Perú Lima North Mission</item>
+        <item>Perú Lima South Mission</item>
+        <item>Perú Lima West Mission</item>
+        <item>Perú Piura Mission</item>
+        <item>Perú Trujillo North Mission</item>
+        <item>Perú Trujillo South Mission</item>
+        <item>Philippines Angeles Mission</item>
+        <item>Philippines Bacolod Mission</item>
+        <item>Philippines Baguio Mission</item>
+        <item>Philippines Butuan Mission</item>
+        <item>Philippines Cagayan de Oro Mission</item>
+        <item>Philippines Cauayan Mission</item>
+        <item>Philippines Cavite Mission</item>
+        <item>Philippines Cebu East Mission</item>
+        <item>Philippines Cebu Mission</item>
+        <item>Philippines Davao Mission</item>
+        <item>Philippines Iloilo Mission</item>
+        <item>Philippines Laoag Mission</item>
+        <item>Philippines Legazpi Mission</item>
+        <item>Philippines Manila Mission</item>
+        <item>Philippines Naga Mission</item>
+        <item>Philippines Olongapo Mission</item>
+        <item>Philippines Quezon City Mission</item>
+        <item>Philippines Quezon City North Mission</item>
+        <item>Philippines San Pablo Mission</item>
+        <item>Philippines Tacloban Mission</item>
+        <item>Philippines Urdaneta Mission</item>
+        <item>Poland Warsaw Mission</item>
+        <item>Portugal Lisbon Mission</item>
+        <item>Portugal Porto Mission</item>
+        <item>Puerto Rico San Juan Mission</item>
+        <item>Republic of the Congo Brazzaville Mission</item>
+        <item>România/Moldova Mission</item>
+        <item>Russia Moscow Mission</item>
+        <item>Russia Novosibirsk Mission</item>
+        <item>Russia Rostov-na-Donu Mission</item>
+        <item>Russia Samara Mission</item>
+        <item>Russia St Petersburg Mission</item>
+        <item>Russia Vladivostok Mission</item>
+        <item>Russia Yekaterinburg Mission</item>
+        <item>Samoa Apia Mission</item>
+        <item>Scotland/Ireland Mission</item>
+        <item>Sierra Leone Freetown Mission</item>
+        <item>Singapore Mission</item>
+        <item>South Africa Cape Town Mission</item>
+        <item>South Africa Durban Mission</item>
+        <item>South Africa Johannesburg Mission</item>
+        <item>South Carolina Columbia Mission</item>
+        <item>Spain Barcelona Mission</item>
+        <item>Spain Madrid Mission</item>
+        <item>Spain Málaga Mission</item>
+        <item>Sweden Stockholm Mission</item>
+        <item>Tahiti Papeete Mission</item>
+        <item>Taiwan Taichung Mission</item>
+        <item>Taiwan Taipei Mission</item>
+        <item>Tennessee Knoxville Mission</item>
+        <item>Tennessee Nashville Mission</item>
+        <item>Texas Dallas Mission</item>
+        <item>Texas Fort Worth Mission</item>
+        <item>Texas Houston East Mission</item>
+        <item>Texas Houston Mission</item>
+        <item>Texas Houston South Mission</item>
+        <item>Texas Lubbock Mission</item>
+        <item>Texas McAllen Mission</item>
+        <item>Texas San Antonio Mission</item>
+        <item>Thailand Bangkok Mission</item>
+        <item>Tonga Nuku\'alofa Mission</item>
+        <item>Trinidad Port of Spain Mission</item>
+        <item>Uganda Kampala Mission</item>
+        <item>Ukraine Dnepropetrovsk Mission</item>
+        <item>Ukraine Kyiv Mission</item>
+        <item>Ukraine L\'viv Mission</item>
+        <item>Uruguay Montevideo Mission</item>
+        <item>Uruguay Montevideo West Mission</item>
+        <item>Utah Logan Mission</item>
+        <item>Utah Ogden Mission</item>
+        <item>Utah Orem Mission</item>
+        <item>Utah Provo Mission</item>
+        <item>Utah Salt Lake City East Mission</item>
+        <item>Utah Salt Lake City Mission</item>
+        <item>Utah Salt Lake City South Mission</item>
+        <item>Utah Salt Lake City Temple Square Mission</item>
+        <item>Utah Salt Lake City West Mission</item>
+        <item>Utah St George Mission</item>
+        <item>Vanuatu Port Vila Mission</item>
+        <item>Venezuela Barcelona Mission</item>
+        <item>Venezuela Caracas Mission</item>
+        <item>Venezuela Maracaibo Mission</item>
+        <item>Venezuela Valencia Mission</item>
+        <item>Virginia Chesapeake Mission</item>
+        <item>Virginia Richmond Mission</item>
+        <item>Washington DC North Mission</item>
+        <item>Washington DC South Mission</item>
+        <item>Washington Everett Mission</item>
+        <item>Washington Federal Way Mission</item>
+        <item>Washington Kennewick Mission</item>
+        <item>Washington Seattle Mission</item>
+        <item>Washington Spokane Mission</item>
+        <item>Washington Tacoma Mission</item>
+        <item>Washington Vancouver Mission</item>
+        <item>Washington Yakima Mission</item>
+        <item>West Virginia Charleston Mission</item>
+        <item>Wisconsin Milwaukee Mission</item>
+        <item>Wyoming Mormon Trail Mission</item>
+        <item>Zambia Lusaka Mission</item>
+        <item>Zimbabwe Harare Mission</item>
+    </string-array>
+
+
+</resources>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,53 +15,79 @@
 
     <LinearLayout style="@style/fieldContainer">
 
-        <LinearLayout style="@style/fieldContainer">
-            <EditText
-                android:tag="name"
-                android:id="@+id/name_edit_text"
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/name"
-                android:maxLines="1"
-                android:inputType="textCapWords"
-                android:singleLine="true"/>
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <LinearLayout style="@style/fieldContainer">
-            <EditText
-                android:id="@+id/email_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:singleLine="true"/>
-        </LinearLayout>
+                <missionarytracker.bent.com.missionarytracker.utils.RoundedImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:id="@+id/userPhoto"
+                    android:background="@mipmap/ic_account_circle_white_24px" />
 
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:src="@mipmap/ic_photo_camera_white"/>
 
-        <LinearLayout style="@style/fieldContainer">
+            </FrameLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp">
 
-                <AutoCompleteTextView
-                    android:id="@+id/auto_missions"
+                <EditText
+                    android:tag="name"
+                    android:id="@+id/name_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="phone"
-                    android:layout_weight="77.70"
-                    android:hint="@string/mission"
-                    android:maxLines="1"
+                    android:hint="@string/name"
+                    android:maxLines="2"
+                    android:inputType="textCapWords"
                     android:singleLine="true"/>
+
+                <EditText
+                    android:id="@+id/email_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:ems="10"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="2"
+                    android:singleLine="true"/>
+
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_missions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="phone"
+            android:layout_weight="77.70"
+            android:hint="@string/mission"
+            android:maxLines="1"
+            android:singleLine="true"/>
+
 
         <LinearLayout style="@style/fieldContainer">
 
@@ -109,7 +136,7 @@
 
                 <Spinner
                     android:id="@+id/departure_spinner"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"/>
 
@@ -133,7 +160,7 @@
 
                 <Spinner
                     android:id="@+id/arrival_spinner"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"/>
 
