@@ -34,7 +34,7 @@
                     android:background="@mipmap/ic_account_circle_white_24px" />
 
                 <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/fab"
+                    android:id="@+id/image_fab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|end"
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="phone"
+            android:inputType="textCapWords"
             android:layout_weight="77.70"
             android:hint="@string/mission"
             android:maxLines="1"
