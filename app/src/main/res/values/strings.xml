@@ -28,4 +28,14 @@
     <string name="is_in_the_field">Is in the field</string>
     <string name="departure_date">Departure Date</string>
     <string name="arrival_date">Arrival Date</string>
+
+    <string-array name="camera_choices">
+        <item>Take Picture</item>
+        <item>Choose Picture</item>
+    </string-array>
+
+    <string name="error_external_storage">There was a problem accessing your device\'s external storage.</string>
+    <string name="title_activity_missionary_details">Missionary Details</string>
+    <string name="general_error">Error</string>
+    <string name="saving">Saving...</string>
 </resources>
