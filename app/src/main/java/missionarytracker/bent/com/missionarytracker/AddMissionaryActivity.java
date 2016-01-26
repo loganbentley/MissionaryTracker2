@@ -126,12 +126,12 @@ public class AddMissionaryActivity extends AppCompatActivity {
         mDepartureYear = cal.get(Calendar.YEAR);
         mDepartureMonth = cal.get(Calendar.MONTH);
         mDepartureDay = cal.get(Calendar.DATE);
-        Date date = cal.getTime();
-        ArrayList<String> dateArray = new ArrayList<>();
-        dateArray.add(0, dateFormat.format(date));
-        ArrayAdapter adapter2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, dateArray);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mDepartureSpinner.setAdapter(adapter2);
+        Date departureDate = cal.getTime();
+        ArrayList<String> departureDateArray = new ArrayList<>();
+        departureDateArray.add(0, dateFormat.format(departureDate));
+        ArrayAdapter departureAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, departureDateArray);
+        departureAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mDepartureSpinner.setAdapter(departureAdapter);
 
         mDepartureSpinner.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -143,6 +143,16 @@ public class AddMissionaryActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        cal.add(Calendar.YEAR, 2);
+        mArrivalYear = cal.get(Calendar.YEAR);
+        mArrivalMonth = cal.get(Calendar.MONTH);
+        mArrivalDay = cal.get(Calendar.DATE);
+        Date arrivalDate = cal.getTime();
+        ArrayList<String> arrivalDateArray = new ArrayList<>();
+        arrivalDateArray.add(0, dateFormat.format(arrivalDate));
+        ArrayAdapter arrivalAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, arrivalDateArray);
+        arrivalAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         mArrivalSpinner.setOnTouchListener(new View.OnTouchListener() {
 

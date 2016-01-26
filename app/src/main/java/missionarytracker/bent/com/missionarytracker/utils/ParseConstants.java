@@ -13,6 +13,7 @@ public class ParseConstants {
     public static final String MISSIONARY_DEPARTURE_DATE = "departureDate";
     public static final String MISSIONARY_ARRIVAL_DATE = "arrivalDate";
     public static final String MISSIONARY_USER = "user";
+    public static final String MISSIONARY_P_DAY = "missionaryPDay";
 
     public static final String TYPE_IMAGE = "image";
 
