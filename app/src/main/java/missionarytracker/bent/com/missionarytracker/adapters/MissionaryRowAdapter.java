@@ -2,6 +2,7 @@ package missionarytracker.bent.com.missionarytracker.adapters;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.parse.ParseFile;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -54,16 +56,20 @@ public class MissionaryRowAdapter extends ArrayAdapter<MissionaryModel> {
         final MissionaryModel missionaryObject = mMissionaryList.get(position);
 
         holder.missionaryNameTV.setText(missionaryObject.getName());
+        holder.timeLeftTV.setText(missionaryObject.getTimeLeft());
 
-//        Uri profilePicture = currentItem.getmImageUri();
-//        if (profilePicture != null)
-//        {
-//            Picasso.with(mContext).load(profilePicture.toString()).into(holder.missionaryThumbnail);
-//        }
-//        else
-//        {
-//            holder.missionaryThumbnail.setImageResource(currentItem.getmIconId());
-//        }
+        Uri profilePicture = missionaryObject.getFileUri();
+        if (profilePicture != null) {
+            Picasso.with(mContext).load(profilePicture.toString()).into(holder.missionaryThumbnail);
+        }
+        else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                holder.missionaryThumbnail.setImageDrawable(mContext.getDrawable(R.mipmap.ic_account_circle_white_24px));
+            }
+            else {
+                holder.missionaryThumbnail.setImageDrawable(mContext.getResources().getDrawable(R.mipmap.ic_account_circle_white_24px));
+            }
+        }
 
         return row;
     }

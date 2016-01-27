@@ -50,7 +50,7 @@ public class AddMissionaryActivity extends AppCompatActivity {
     private EditText mNameET, mEmailET;
     private AutoCompleteTextView mMissionET;
     private FloatingActionButton mImageFAB, mSaveFAB;
-    private Spinner mDepartureSpinner, mArrivalSpinner;
+    private Spinner mDepartureSpinner, mArrivalSpinner, dayOfWeekSpinner;
     private RoundedImageView mProfileImage;
 
     private int mDepartureYear, mDepartureMonth, mDepartureDay, mArrivalYear, mArrivalMonth, mArrivalDay;
@@ -63,6 +63,8 @@ public class AddMissionaryActivity extends AppCompatActivity {
     public static final int MEDIA_TYPE_VIDEO = 3;
 
     private ProgressDialog mProgressDialog;
+
+    private String dayOfWeek[] = {"Unknown", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,7 @@ public class AddMissionaryActivity extends AppCompatActivity {
         mDepartureSpinner = (Spinner) findViewById(R.id.departure_spinner);
         mArrivalSpinner = (Spinner) findViewById(R.id.arrival_spinner);
         mProfileImage = (RoundedImageView) findViewById(R.id.user_photo);
+        dayOfWeekSpinner = (Spinner) findViewById(R.id.p_day_spinner);
 
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setTitle(getString(R.string.saving));
@@ -86,6 +89,9 @@ public class AddMissionaryActivity extends AppCompatActivity {
         String[] missions = getResources().getStringArray(R.array.missions);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, missions);
         mMissionET.setAdapter(adapter);
+
+        ArrayAdapter<String> pDayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dayOfWeek);
+        dayOfWeekSpinner.setAdapter(pDayAdapter);
 
         mSaveFAB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,6 +159,7 @@ public class AddMissionaryActivity extends AppCompatActivity {
         arrivalDateArray.add(0, dateFormat.format(arrivalDate));
         ArrayAdapter arrivalAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, arrivalDateArray);
         arrivalAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mArrivalSpinner.setAdapter(arrivalAdapter);
 
         mArrivalSpinner.setOnTouchListener(new View.OnTouchListener() {
 
@@ -233,6 +240,8 @@ public class AddMissionaryActivity extends AppCompatActivity {
         cal.set(mArrivalYear, mArrivalMonth, mArrivalYear);
         Date arrivalDate = new Date(cal.getTimeInMillis());
 
+        int dayOfWeek = dayOfWeekSpinner.getSelectedItemPosition() - 1;
+
         ParseObject missionary = new ParseObject(ParseConstants.MISSIONARY_TABLE);
         missionary.put(ParseConstants.MISSIONARY_NAME, name);
         missionary.put(ParseConstants.MISSIONARY_EMAIL, email);
@@ -240,6 +249,7 @@ public class AddMissionaryActivity extends AppCompatActivity {
         missionary.put(ParseConstants.MISSIONARY_DEPARTURE_DATE, departureDate);
         missionary.put(ParseConstants.MISSIONARY_ARRIVAL_DATE, arrivalDate);
         missionary.put(ParseConstants.MISSIONARY_USER, ParseUser.getCurrentUser());
+        missionary.put(ParseConstants.MISSIONARY_P_DAY, dayOfWeek);
 
         if(mMediaUri != null) {
             byte[] fileBytes = FileHelper.getByteArrayFromFile(AddMissionaryActivity.this, mMediaUri);

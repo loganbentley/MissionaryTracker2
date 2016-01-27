@@ -1,5 +1,8 @@
 package missionarytracker.bent.com.missionarytracker.models;
 
+import android.net.Uri;
+
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 
 import java.text.ParseException;
@@ -16,10 +19,14 @@ import missionarytracker.bent.com.missionarytracker.utils.ParseConstants;
 public class MissionaryModel {
 
     private String name, timeLeft;
+    private Uri fileUri;
 
     public MissionaryModel(ParseObject missionaryParseObject) {
         name = missionaryParseObject.getString(ParseConstants.MISSIONARY_NAME);
         timeLeft = calculateTimeLeft(missionaryParseObject);
+
+        ParseFile file = missionaryParseObject.getParseFile(ParseConstants.MISSIONARY_PICTURE);
+        fileUri = file != null ? Uri.parse(file.getUrl()) : null;
     }
 
     private String calculateTimeLeft(ParseObject missionaryParseObject) {
@@ -39,6 +46,14 @@ public class MissionaryModel {
 
     public String getTimeLeft() {
         return timeLeft + " days left";
+    }
+
+    public void setFileUri(Uri missionaryUri) {
+        fileUri = missionaryUri;
+    }
+
+    public Uri getFileUri() {
+        return fileUri;
     }
 
 }
