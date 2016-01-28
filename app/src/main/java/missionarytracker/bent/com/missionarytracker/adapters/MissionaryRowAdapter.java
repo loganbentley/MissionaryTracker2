@@ -3,17 +3,20 @@ package missionarytracker.bent.com.missionarytracker.adapters;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.parse.ParseFile;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import missionarytracker.bent.com.missionarytracker.R;
@@ -29,7 +32,7 @@ public class MissionaryRowAdapter extends ArrayAdapter<MissionaryModel> {
     private List<MissionaryModel> mMissionaryList = new ArrayList<>();
 
     public MissionaryRowAdapter(Context context, int resource, List<MissionaryModel> missionaryList) {
-        super(context, resource);
+        super(context, resource, missionaryList);
         mContext = context;
         mMissionaryList = missionaryList;
     }
@@ -46,6 +49,7 @@ public class MissionaryRowAdapter extends ArrayAdapter<MissionaryModel> {
             holder.missionaryNameTV = (TextView) row.findViewById(R.id.missionary_name);
             holder.timeLeftTV = (TextView) row.findViewById(R.id.time_left);
             holder.missionaryThumbnail = (ImageView) row.findViewById(R.id.missionary_thumbnail);
+            holder.timeToWriteLayout = (LinearLayout) row.findViewById(R.id.time_to_write);
 
             row.setTag(holder);
         }
@@ -57,6 +61,12 @@ public class MissionaryRowAdapter extends ArrayAdapter<MissionaryModel> {
 
         holder.missionaryNameTV.setText(missionaryObject.getName());
         holder.timeLeftTV.setText(missionaryObject.getTimeLeft());
+
+        Calendar cal = Calendar.getInstance();
+        int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
+        if (missionaryObject.getPDay() == dayOfWeek) {
+            holder.timeToWriteLayout.setVisibility(View.VISIBLE);
+        }
 
         Uri profilePicture = missionaryObject.getFileUri();
         if (profilePicture != null) {
@@ -78,6 +88,7 @@ public class MissionaryRowAdapter extends ArrayAdapter<MissionaryModel> {
     static class MissionaryRowHolder {
         TextView missionaryNameTV, timeLeftTV;
         ImageView missionaryThumbnail;
+        LinearLayout timeToWriteLayout;
     }
 
 }

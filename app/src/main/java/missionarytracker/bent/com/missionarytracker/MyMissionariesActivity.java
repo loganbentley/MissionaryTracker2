@@ -1,6 +1,7 @@
 package missionarytracker.bent.com.missionarytracker;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -38,6 +39,15 @@ public class MyMissionariesActivity extends AppCompatActivity {
 
         Button addMissionaryButton = (Button) findViewById(R.id.add_missionary_btn);
         addMissionaryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MyMissionariesActivity.this, AddMissionaryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton addMissionaryFab = (FloatingActionButton) findViewById(R.id.new_missionary_fab);
+        addMissionaryFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MyMissionariesActivity.this, AddMissionaryActivity.class);
@@ -86,17 +96,19 @@ public class MyMissionariesActivity extends AppCompatActivity {
                         missionaryList.add(missionary);
                         toggleDisplay(missionaryList);
                     }
+                    if (size == 0) {
+                        LinearLayout emptyState = (LinearLayout) findViewById(R.id.empty_state_container);
+                        emptyState.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
     }
 
     private void toggleDisplay(ArrayList<MissionaryModel> missionaryList) {
-        LinearLayout emptyState = (LinearLayout) findViewById(R.id.empty_state_container);
         FrameLayout nonEmptyState = (FrameLayout) findViewById(R.id.non_empty_state_container);
         ListView missionaryListView = (ListView) findViewById(R.id.missionary_list);
 
-        emptyState.setVisibility(View.GONE);
         nonEmptyState.setVisibility(View.VISIBLE);
 
         MissionaryRowAdapter rowAdapter = new MissionaryRowAdapter(this, R.layout.row_missionary, missionaryList);

@@ -20,18 +20,20 @@ public class MissionaryModel {
 
     private String name, timeLeft;
     private Uri fileUri;
+    private int pDay;
 
     public MissionaryModel(ParseObject missionaryParseObject) {
         name = missionaryParseObject.getString(ParseConstants.MISSIONARY_NAME);
         timeLeft = calculateTimeLeft(missionaryParseObject);
+        pDay = missionaryParseObject.getInt(ParseConstants.MISSIONARY_P_DAY);
 
         ParseFile file = missionaryParseObject.getParseFile(ParseConstants.MISSIONARY_PICTURE);
         fileUri = file != null ? Uri.parse(file.getUrl()) : null;
     }
 
     private String calculateTimeLeft(ParseObject missionaryParseObject) {
-        Date date1 = missionaryParseObject.getDate(ParseConstants.MISSIONARY_ARRIVAL_DATE);
-        Date date2 = missionaryParseObject.getDate(ParseConstants.MISSIONARY_DEPARTURE_DATE);
+        Date date1 = missionaryParseObject.getDate(ParseConstants.MISSIONARY_DEPARTURE_DATE);
+        Date date2 = missionaryParseObject.getDate(ParseConstants.MISSIONARY_ARRIVAL_DATE);
         long diff = date2.getTime() - date1.getTime();
         return String.valueOf(TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
     }
@@ -54,6 +56,10 @@ public class MissionaryModel {
 
     public Uri getFileUri() {
         return fileUri;
+    }
+
+    public int getPDay() {
+        return pDay;
     }
 
 }

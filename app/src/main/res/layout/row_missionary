@@ -54,11 +54,11 @@
         android:visibility="visible">
 
         <LinearLayout
-            android:id="@+id/invite_sent_layout"
+            android:id="@+id/time_to_write"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="35dp"
@@ -68,7 +68,7 @@
                 android:src="@mipmap/ic_mail_alert"/>
 
             <TextView
-                android:text="@string/time_to_write"
+                android:text="@string/p_day_tomorrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
