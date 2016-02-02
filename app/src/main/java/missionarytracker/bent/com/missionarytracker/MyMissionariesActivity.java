@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -105,7 +106,7 @@ public class MyMissionariesActivity extends AppCompatActivity {
         });
     }
 
-    private void toggleDisplay(ArrayList<MissionaryModel> missionaryList) {
+    private void toggleDisplay(final ArrayList<MissionaryModel> missionaryList) {
         FrameLayout nonEmptyState = (FrameLayout) findViewById(R.id.non_empty_state_container);
         ListView missionaryListView = (ListView) findViewById(R.id.missionary_list);
 
@@ -113,5 +114,16 @@ public class MyMissionariesActivity extends AppCompatActivity {
 
         MissionaryRowAdapter rowAdapter = new MissionaryRowAdapter(this, R.layout.row_missionary, missionaryList);
         missionaryListView.setAdapter(rowAdapter);
+
+        missionaryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MyMissionariesActivity.this, MissionaryDetailsActivity.class);
+                Bundle extras = new Bundle();
+                extras.putParcelable("missionary", missionaryList.get(position));
+                intent.putExtras(extras);
+                startActivity(intent);
+            }
+        });
     }
 }
