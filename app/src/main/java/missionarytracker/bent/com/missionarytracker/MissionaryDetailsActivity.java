@@ -1,5 +1,6 @@
 package missionarytracker.bent.com.missionarytracker;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ public class MissionaryDetailsActivity extends AppCompatActivity {
 
     private RoundedImageView mMissionaryProfile;
     private TextView mMissionaryNameTV, mMissionaryMissionTV, mMissionaryTimeLeftTV;
+    private String mEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,11 @@ public class MissionaryDetailsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                    Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                    emailIntent.setData(Uri.parse("mailto:"));
+                    emailIntent.setType("message/rfc822");
+                    emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {mEmail});
+                    startActivity(emailIntent);
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -51,6 +57,7 @@ public class MissionaryDetailsActivity extends AppCompatActivity {
     }
 
     private void fillData(MissionaryModel missionary) {
+        mEmail = missionary.getEmail();
 
         Uri profilePicture = missionary.getFileUri();
         if (profilePicture != null) {
@@ -74,6 +81,7 @@ public class MissionaryDetailsActivity extends AppCompatActivity {
             Snackbar.make(findViewById(android.R.id.content), "P-day is tomorrow!", Snackbar.LENGTH_LONG)
                     .setAction("Write", null).setActionTextColor(getResources().getColor(R.color.accent)).show();
         }
+
     }
 
 }

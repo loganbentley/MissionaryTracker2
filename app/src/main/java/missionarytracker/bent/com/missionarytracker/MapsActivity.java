@@ -1,8 +1,13 @@
 package missionarytracker.bent.com.missionarytracker;
 
+import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -10,6 +15,17 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import missionarytracker.bent.com.missionarytracker.models.MissionaryModel;
+import missionarytracker.bent.com.missionarytracker.utils.ParseConstants;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -39,9 +55,51 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        ParseQuery<ParseObject> missionaryQuery = ParseQuery.getQuery(ParseConstants.MISSIONARY_TABLE);
+        missionaryQuery.whereEqualTo(ParseConstants.MISSIONARY_USER, ParseUser.getCurrentUser());
+        missionaryQuery.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> missionaries, ParseException e) {
+                if (e == null) {
+                    LatLng latLng = null;
+                    for (int i = 0; i < missionaries.size(); i++) {
+                        ParseObject missionaryParse = missionaries.get(i);
+                        MissionaryModel missionary = new MissionaryModel(missionaryParse);
+                        latLng = getLocationFromAddress(missionary.getMissionMap());
+                        mMap.addMarker(new MarkerOptions().position(latLng).title(missionary.getName()));
+                    }
+                    if (latLng != null) {
+                        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                    }
+
+                }
+            }
+        });
+
+    }
+
+    public LatLng getLocationFromAddress(String strAddress) {
+
+        Geocoder coder = new Geocoder(getApplicationContext());
+        List<Address> address;
+        LatLng p1 = null;
+
+        try {
+            address = coder.getFromLocationName(strAddress, 5);
+            if (address == null) {
+                return null;
+            }
+            Address location = address.get(0);
+            location.getLatitude();
+            location.getLongitude();
+
+            p1 = new LatLng(location.getLatitude(), location.getLongitude() );
+
+        } catch (Exception ex) {
+
+            ex.printStackTrace();
+        }
+
+        return p1;
     }
 }

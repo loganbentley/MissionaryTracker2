@@ -41,6 +41,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import missionarytracker.bent.com.missionarytracker.models.MissionaryModel;
 import missionarytracker.bent.com.missionarytracker.utils.FileHelper;
 import missionarytracker.bent.com.missionarytracker.utils.ParseConstants;
 import missionarytracker.bent.com.missionarytracker.utils.RoundedImageView;
@@ -232,13 +233,14 @@ public class AddMissionaryActivity extends AppCompatActivity {
     private void saveData() {
         String name = mNameET.getText().toString();
         String email = mEmailET.getText().toString();
-        String mission = mMissionET.getText().toString();
-        Calendar cal = Calendar.getInstance(Locale.getDefault());
-        cal.set(mDepartureYear, mDepartureMonth, mDepartureDay);
-        Date departureDate = new Date(cal.getTimeInMillis());
+        final String mission = mMissionET.getText().toString();
+        Calendar cal1 = Calendar.getInstance(Locale.getDefault());
+        cal1.set(mDepartureYear, mDepartureMonth, mDepartureDay);
+        Date departureDate = new Date(cal1.getTimeInMillis());
 
-        cal.set(mArrivalYear, mArrivalMonth, mArrivalYear);
-        Date arrivalDate = new Date(cal.getTimeInMillis());
+        Calendar cal2 = Calendar.getInstance(Locale.getDefault());
+        cal2.set(mArrivalYear, mArrivalMonth, mArrivalDay);
+        Date arrivalDate = new Date(cal2.getTimeInMillis());
 
         int dayOfWeek = dayOfWeekSpinner.getSelectedItemPosition() - 1;
 
@@ -250,6 +252,7 @@ public class AddMissionaryActivity extends AppCompatActivity {
         missionary.put(ParseConstants.MISSIONARY_ARRIVAL_DATE, arrivalDate);
         missionary.put(ParseConstants.MISSIONARY_USER, ParseUser.getCurrentUser());
         missionary.put(ParseConstants.MISSIONARY_P_DAY, dayOfWeek);
+
 
         if(mMediaUri != null) {
             byte[] fileBytes = FileHelper.getByteArrayFromFile(AddMissionaryActivity.this, mMediaUri);
@@ -265,6 +268,7 @@ public class AddMissionaryActivity extends AppCompatActivity {
                 missionary.put(ParseConstants.MISSIONARY_PICTURE, file);
             }
         }
+        final MissionaryModel missionaryModel = new MissionaryModel(missionary);
 
         missionary.saveInBackground(new SaveCallback() {
             @Override
@@ -272,6 +276,9 @@ public class AddMissionaryActivity extends AppCompatActivity {
                 mProgressDialog.dismiss();
                 if (e == null) {
                     Intent intent = new Intent(AddMissionaryActivity.this, MissionaryDetailsActivity.class);
+                    Bundle extras = new Bundle();
+                    extras.putParcelable("missionary", missionaryModel);
+                    intent.putExtras(extras);
                     startActivity(intent);
                 }
                 else {

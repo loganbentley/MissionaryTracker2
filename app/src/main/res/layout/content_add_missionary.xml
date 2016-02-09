@@ -17,12 +17,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="115dp"
+            android:paddingBottom="8dp"
             android:orientation="horizontal">
 
             <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="115dp"
+                android:paddingBottom="8dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
                 android:orientation="vertical">
 
                 <missionarytracker.bent.com.missionarytracker.utils.RoundedImageView
@@ -88,37 +92,6 @@
             android:maxLines="1"
             android:singleLine="true"/>
 
-
-        <LinearLayout style="@style/fieldContainer">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/my_missionary"
-                android:textSize="18sp"
-                android:paddingRight="5dp"/>
-
-            <RadioGroup
-                android:id="@+id/gender_radio_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/is_still_home"
-                    android:paddingRight="5dp"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/is_in_the_field"/>
-
-            </RadioGroup>
-
-        </LinearLayout>
 
         <LinearLayout style="@style/fieldContainer">
 

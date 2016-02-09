@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="missionarytracker.bent.com.missionarytracker.MissionaryDetailsActivity">
+    tools:context="missionarytracker.bent.com.missionarytracker.MissionaryDetailsActivity"
+    android:background="@drawable/grey_repeating">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -29,6 +30,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="16dp"
+                android:padding="16dp"
                 android:background="@mipmap/ic_account_circle_white_24px"
                 android:layout_weight=".1"/>
 

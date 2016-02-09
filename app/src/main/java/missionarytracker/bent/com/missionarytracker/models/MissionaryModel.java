@@ -3,12 +3,14 @@ package missionarytracker.bent.com.missionarytracker.models;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.text.TextUtils;
 
 import com.parse.ParseFile;
 import com.parse.ParseObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -20,7 +22,7 @@ import missionarytracker.bent.com.missionarytracker.utils.ParseConstants;
  */
 public class MissionaryModel implements Parcelable {
 
-    private String name, timeLeft, mission;
+    private String name, timeLeft, mission, email;
     private Uri fileUri;
     private int pDay;
 
@@ -29,6 +31,7 @@ public class MissionaryModel implements Parcelable {
         timeLeft = calculateTimeLeft(missionaryParseObject);
         pDay = missionaryParseObject.getInt(ParseConstants.MISSIONARY_P_DAY);
         mission = missionaryParseObject.getString(ParseConstants.MISSIONARY_MISSION);
+        email = missionaryParseObject.getString(ParseConstants.MISSIONARY_EMAIL);
 
         ParseFile file = missionaryParseObject.getParseFile(ParseConstants.MISSIONARY_PICTURE);
         fileUri = file != null ? Uri.parse(file.getUrl()) : null;
@@ -40,6 +43,7 @@ public class MissionaryModel implements Parcelable {
         fileUri = in.readParcelable(Uri.class.getClassLoader());
         pDay = in.readInt();
         mission = in.readString();
+        email = in.readString();
     }
 
     public static final Creator<MissionaryModel> CREATOR = new Creator<MissionaryModel>() {
@@ -55,9 +59,10 @@ public class MissionaryModel implements Parcelable {
     };
 
     private String calculateTimeLeft(ParseObject missionaryParseObject) {
-        Date date1 = missionaryParseObject.getDate(ParseConstants.MISSIONARY_DEPARTURE_DATE);
-        Date date2 = missionaryParseObject.getDate(ParseConstants.MISSIONARY_ARRIVAL_DATE);
-        long diff = date2.getTime() - date1.getTime();
+//        Date date1 = missionaryParseObject.getDate(ParseConstants.MISSIONARY_DEPARTURE_DATE);
+        Long date1 = Calendar.getInstance().getTimeInMillis();
+        Long date2 = missionaryParseObject.getDate(ParseConstants.MISSIONARY_ARRIVAL_DATE).getTime();
+        long diff = date2 - date1;
         return String.valueOf(TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
     }
 
@@ -73,10 +78,6 @@ public class MissionaryModel implements Parcelable {
         return timeLeft + " days left";
     }
 
-    public void setFileUri(Uri missionaryUri) {
-        fileUri = missionaryUri;
-    }
-
     public Uri getFileUri() {
         return fileUri;
     }
@@ -85,9 +86,15 @@ public class MissionaryModel implements Parcelable {
         return pDay;
     }
 
-    public void setMission(String missionaryMission) { mission = missionaryMission; }
-
     public String getMission() { return mission; }
+
+    public String getMissionMap() {
+        return mission.replace(" Mission", "");
+    }
+
+    public String getEmail() {
+        return email;
+    }
 
     @Override
     public int describeContents() {
@@ -101,5 +108,6 @@ public class MissionaryModel implements Parcelable {
         dest.writeParcelable(fileUri, flags);
         dest.writeInt(pDay);
         dest.writeString(mission);
+        dest.writeString(email);
     }
 }
