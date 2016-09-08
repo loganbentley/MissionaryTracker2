@@ -87,8 +87,9 @@
         <activity
             android:name="com.bent.MissionaryTracker.MissionaryDetailsActivity"
             android:label="@string/title_activity_missionary_details"
-            android:parentActivityName="ccom.bent.MissionaryTracker.MyMissionariesActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:parentActivityName="com.bent.MissionaryTracker.MyMissionariesActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateUnchanged">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bent.MissionaryTracker.MyMissionariesActivity" />

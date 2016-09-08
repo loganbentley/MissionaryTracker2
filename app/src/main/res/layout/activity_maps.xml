@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bent.com.missionarytracker.MapsActivity"
+    tools:context="com.bent.MissionaryTracker.MapsActivity"
     android:background="@drawable/grey_repeating" >
 
 <fragment
@@ -10,6 +10,6 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bent.com.missionarytracker.MapsActivity" />
+    tools:context="com.bent.MissionaryTracker.MapsActivity" />
 
 </RelativeLayout>
