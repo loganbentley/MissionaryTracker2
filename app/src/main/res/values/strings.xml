@@ -41,4 +41,8 @@
     <string name="time_to_write">Time To Write</string>
     <string name="missionary_p_day">Missionary P-Day</string>
     <string name="p_day_tomorrow">P-Day Tomorrow</string>
+    <string name="add_area">Add Area</string>
+    <string name="add_button">Add Buton</string>
+    <string name="delete_button">Delete Button</string>
+    <string name="areas">Areas</string>
 </resources>

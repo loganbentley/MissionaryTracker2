@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="missionarytracker.bent.com.missionarytracker.LoginActivity"
+    tools:context="com.bent.com.missionarytracker.LoginActivity"
     android:background="@drawable/grey_repeating">
 
     <android.support.design.widget.AppBarLayout

@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="missionarytracker.bent.com.missionarytracker.AddMissionaryActivity"
+    tools:context="com.bent.com.missionarytracker.AddMissionaryActivity"
     tools:showIn="@layout/activity_add_missionary">
 
     <LinearLayout style="@style/fieldContainer">
@@ -29,7 +29,7 @@
                 android:paddingRight="5dp"
                 android:orientation="vertical">
 
-                <missionarytracker.bent.com.missionarytracker.utils.RoundedImageView
+                <com.bent.com.missionarytracker.utils.RoundedImageView
                     android:id="@+id/user_photo"
                     android:layout_width="100dp"
                     android:layout_height="100dp"

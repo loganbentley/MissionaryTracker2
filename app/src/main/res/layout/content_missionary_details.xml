@@ -9,7 +9,78 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="missionarytracker.bent.com.missionarytracker.MissionaryDetailsActivity"
+    tools:context="com.bent.com.missionarytracker.MissionaryDetailsActivity"
     tools:showIn="@layout/activity_missionary_details">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/title_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/areas"
+                android:textSize="20sp"
+                android:paddingBottom="4dp"/>
+
+
+            <RelativeLayout
+                android:id="@+id/content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/title_area">
+
+                <EditText
+                    android:id="@+id/area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/add_area"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:scrollHorizontally="false"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/add_remove_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content_layout" >
+
+                <ImageButton
+                    android:id="@+id/add"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@mipmap/ic_action_plus"
+                    android:background="@android:color/transparent"
+                    android:onClick="onClick"
+                    android:contentDescription="@string/add_button"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+
+                <ImageButton
+                    android:id="@+id/remove"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@mipmap/ic_action_minus"
+                    android:background="@android:color/transparent"
+                    android:onClick="onClick"
+                    android:contentDescription="@string/delete_button"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
 
 </RelativeLayout>
